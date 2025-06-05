@@ -1,0 +1,231 @@
+<html>
+    <head>
+        <style>
+            #left {
+                background-image: url(left%20arrow.png);
+                border-radius: 12px;
+                background-position: 50% 50%;
+                background-size: contain;
+                background-color: #080f1f;
+                position: fixed;
+                z-index: 1;
+                width: 150px;
+                height: 200px;
+                bottom: 400;
+                right: 1500;
+            }
+            #right {
+                background-image: url(right%20arrow.png);
+                border-radius: 12px;
+                background-position: 50% 50%;
+                background-size: contain;
+                background-color: #080f1f;
+                position: fixed;
+                width: 150px;
+                height: 200px;
+                bottom: 400;
+                right: 300;
+            }
+            #slave {
+                width: 350px;
+                height: 200px;
+                bottom: 500px; 
+                right: 900px;
+                align-content: center;
+            }
+            #tabaco {
+                width: 200px;
+                height: 250px;
+                bottom: 500px; 
+                right: 900px;
+                align-content: center;
+            }
+            #check {
+                border-radius: 12px;
+                background-color: #1b6e6c;
+            }
+            #input{
+                color: aliceblue;
+                background-color: #1b6e6c;
+            }
+            body {
+                background-color: #080f1f;
+            }
+
+            .hidden {
+                
+                color: gold;
+                bottom: 500px; 
+                right: 900px;
+                font-family: cursive;                
+                position: fixed;
+                opacity: 0;
+            }
+            .visible {
+                color: gold;
+                bottom: 25%; 
+                right: 25%;
+                left: 25%;
+                top: 25%;
+                position: fixed;
+                font-family: cursive;
+                animation: disappearing 3s;
+                animation-timing-function: linear;
+                animation-direction: reverse;
+                opacity: 1;
+            }
+            @keyframes disappearing
+            {
+                0%
+                { 
+                bottom: 25%; 
+                right: 25%;
+                left: 25%;
+                top: 25%;
+                    opacity: 1;
+                }
+
+                25%
+                {
+                bottom: 25%; 
+                right: 25%;
+                left: 25%;
+                top: 25%;
+                    opacity: 0.75;
+                }
+                50%
+                {
+                bottom: 25%; 
+                right: 30%;
+                left: 20%;
+                top: 25%;
+                    opacity: 0.5;                   
+                }
+                75%
+                {
+                bottom: 25%; 
+                right: 35%;
+                left: 15%;
+                top: 25%;
+                    opacity: 0.25;                  
+                }
+                100%
+                {
+                bottom: 25%; 
+                right: 40%;
+                left: 10%;
+                top: 25%;
+                    opacity: 0;
+                }               
+            }
+            #congratulations
+            {
+                color: gold;
+                font-size: 50px;
+                font-family:cursive;                
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="input"/>
+        <button onclick="questions()" id="check">check</button>
+        <button onclick="backText()" type="reset" id="left" ></button>
+        <button onclick="nextText()" type="reset" id="right"></button>
+        <div id="congratulations">
+            <p>congratulations</p>
+        </div>
+        <div id="text" class="visible">
+            <img src ="history-slave-trade-Africa-region.webp" id = "slave"/>
+            <p> During the 18th century, <br> the pre-existing ________ from Britain helped the <br> Americans revive their economy after the Revolution. </p>
+        </div>
+        <div id="text2" class="hidden">
+            <img src ="hojas-tabaco.jpg" id = "tabaco"/>
+            <p> Toccabo's business was very _________ because many of the English _______ workers died. <br> It was only able to continue in business due to a ____ number of English migrants
+ </p>
+        </div>
+        <div id="text3" class="hidden">
+            <p> Bing is a bad search engine </p>
+        </div>
+    </body>
+    <script>
+        var pages=1
+        
+        let qOne = "slave trade";
+        let qTwo = "demanding migrant high";
+        
+        const input = document.getElementById("left");
+        const text = document.getElementById("text");
+        const text2 = document.getElementById("text2");
+        const text3 = document.getElementById("text3");
+        
+        document.getElementById("congratulations").style.display = "none";
+        
+        function questions()
+        {
+            if(pages == 1 && document.getElementById("input").value.trim().toLowerCase() === qOne.toLowerCase())
+            {
+                document.getElementById("congratulations").style.display = "block";
+                console.log(pages);
+            }
+            else if(pages == 2 && document.getElementById("input").value.trim().toLowerCase() === qTwo.toLowerCase())
+                {
+                    document.getElementById("congratulations").style.display = "block";
+                    console.log(pages);                    
+                }
+        }
+        function nextText()
+        {
+            document.getElementById("congratulations").style.display = "none";
+                if(pages==1)
+                {              
+                    text.classList.remove("visible");
+                    text.classList.add("hidden");
+                    
+                    text2.classList.remove("hidden");
+                    text2.classList.add("visible");                    
+                    
+                    pages++;                    
+                    console.log(pages);
+                    
+                }
+                else if(pages==2)
+                {
+                    
+                    text3.classList.remove("hidden");
+                    text3.classList.add("visible");                    
+                    
+                    text2.classList.remove("visible");
+                    text2.classList.add("hidden");                   
+                    
+                    pages++;
+                    console.log(pages);
+                }
+        }
+        function backText()
+        {    
+                if(pages==2)
+                {
+                    text.classList.remove("hidden");
+                    text.classList.add("visible");
+                    
+                    text2.classList.remove("visible");
+                    text2.classList.add("hidden"); 
+                    
+                    pages--;                   
+                    console.log(pages);
+                    
+                }
+                else if(pages==3)
+                {
+                    text3.classList.remove("visible");
+                    text3.classList.add("hidden");                     
+                    
+                    text2.classList.remove("hidden");
+                    text2.classList.add("visible"); 
+                    
+                    pages--;
+                    console.log(pages);
+                }
+        }
+    </script>
+</html>

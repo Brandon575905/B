@@ -1,0 +1,343 @@
+<html>
+    <head>
+        <style>
+            #left {
+                background-image: url(left%20arrow.png);
+                border-radius: 12px;
+                background-position: 50% 50%;
+                background-size: contain;
+                background-color: #080f1f;
+                position: fixed;
+                z-index: 1;
+                width: 150px;
+                height: 200px;
+                bottom: 400;
+                right: 1500;
+            }
+            #right {
+                background-image: url(right%20arrow.png);
+                border-radius: 12px;
+                background-position: 50% 50%;
+                background-size: contain;
+                background-color: #080f1f;
+                position: fixed;
+                width: 150px;
+                height: 200px;
+                bottom: 400;
+                right: 300;
+            }
+            #slave {
+                width: 350px;
+                height: 200px;
+                bottom: 500px; 
+                right: 900px;
+                align-content: center;
+            }
+            #tabaco {
+                width: 200px;
+                height: 250px;
+                bottom: 500px; 
+                right: 900px;
+                align-content: center;
+            }
+            #race
+            {
+                width: 230px;
+                height: 200px;
+                bottom: 500px; 
+                right: 900px;
+                align-content: center;               
+            }
+            #check {
+                border-radius: 12px;
+                background-color: #1b6e6c;
+            }
+            #input{
+                color: aliceblue;
+                background-color: #1b6e6c;
+            }
+            body {
+                background-color: #080f1f;
+            }
+
+            .hidden {
+                
+                color: gold;
+                bottom: 500px; 
+                right: 900px;
+                font-family: cursive;                
+                position: fixed;
+                opacity: 0;
+            }
+            .visible {
+                color: gold;
+                bottom: 25%; 
+                right: 25%;
+                left: 25%;
+                top: 25%;
+                position: fixed;
+                font-family: cursive;
+                animation: disappearing 3s;
+                animation-timing-function: linear;
+                animation-direction: reverse;
+                opacity: 1;
+            }
+            @keyframes disappearing
+            {
+                0%
+                { 
+                bottom: 25%; 
+                right: 25%;
+                left: 25%;
+                top: 25%;
+                    opacity: 1;
+                }
+
+                25%
+                {
+                bottom: 25%; 
+                right: 25%;
+                left: 25%;
+                top: 25%;
+                    opacity: 0.75;
+                }
+                50%
+                {
+                bottom: 25%; 
+                right: 30%;
+                left: 20%;
+                top: 25%;
+                    opacity: 0.5;                   
+                }
+                75%
+                {
+                bottom: 25%; 
+                right: 35%;
+                left: 15%;
+                top: 25%;
+                    opacity: 0.25;                  
+                }
+                100%
+                {
+                bottom: 25%; 
+                right: 40%;
+                left: 10%;
+                top: 25%;
+                    opacity: 0;
+                }               
+            }
+            #congratulations
+            {
+                color: gold;
+                font-size: 50px;
+                font-family:cursive;                
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="input"/>
+        <button onclick="questions()" id="check">check</button>
+        <button onclick="backText()" type="reset" id="left" ></button>
+        <button onclick="nextText()" type="reset" id="right"></button>
+        <div id="congratulations">
+            <p>congratulations</p>
+        </div>
+        <div id="text" class="visible">
+            <img src ="history-slave-trade-Africa-region.webp" id = "slave"/>
+            <p> During the 18th century, <br> the pre-existing ________ from Britain helped the <br> Americans revive their economy after the Revolution. </p>
+        </div>
+        <div id="text2" class="hidden">
+            <img src ="hojas-tabaco.jpg" id = "tabaco"/>
+            <p> Toccabo's business was very _________ because many of the English _______ workers died. <br> It was only able to continue in business due to a ____ number of English migrants
+ </p>
+        </div>
+        <div id="text3" class="hidden">
+            <img src ="money-illustration-isolated_23-2151568514.avif" id = "slave"/>
+            <p> “despite variations within and across colonies, colonial British America underwent more _____ economic expansion over the course of the ____ and ____ centuries than did its European counterparts, to the point that, on the eve of the American Revolution, white settlers in British America enjoyed one of the ________ living standards in the world at the time” <br> (Slater, 2021). </p>
+        </div>
+        <div id="text4" class="hidden">
+            <img src ="Income-Tax.jpg" id = "slave"/>
+            <p>After the American Revolution, Congress had some issues with the economy of the United States, so they devised a plan that “part of the revenue [would ] be used to pay for the common defense of the United States. No longer would states be allowed to impose _______ as they had done during the 1780s. The national government was now given the power to regulate both _______ and interstate commerce. As a result, the nation was to become a common market.” This would lay the ___________ for the long run.</p> 
+        </div>
+        <div id="text5" class="hidden">
+        <img src ="TSR-inequality.webp" id = "race"/> 
+        <p> The American economy favored _____ Americans the most throughout history due to the exposure of slaves when the British had control. The idea of having _______ Americans work more labor for less pay became more common in the United States and the _________ states the most. </p>
+        </div>
+        <div id="text6" class="hidden"> 
+            <p>
+References <br>
+Baack, B. (2001, October). The Economics of the American Revolutionary War (R. Whaples, Ed.). Economic History Association. https://eh.net/encyclopedia/the-economics-of-the-american-revolutionary-war-2/ <br>
+Mancall, P. (2021, April 26). Economic History of the United States: Precolonial and Colonial Periods. Oxford Research Encyclopedia of Economics and Finance. https://oxfordre.com/economics/display/10.1093/acrefore/9780190625979.001.0001/acrefore-9780190625979-e-480?p=emailAKUOEpzAKn/tg&d=/10.1093/acrefore/9780190625979.001.0001/acrefore-9780190625979-e-480 <br>
+Rever, L. (n.d.). American Economy (M. Carey & B. Little, Ed.). National Park Service. Retrieved June 22, 2017, from https://www.nps.gov/articles/taas-strugglesandtriumphs-intro.htm <br>
+Slater, A. (2021, October 29). The Economy of Colonial British America. Oxford Research Encyclopedia of American History. https://oxfordre.com/americanhistory/display/10.1093/acrefore/9780199329175.001.0001/acrefore-9780199329175-e-889 
+            </p>
+        </div>
+    </body>
+    <script>
+        var pages=1
+        
+        let qOne = "slave trade";
+        let qTwo = "demanding migrant high";
+        let qThree = "rapid 17th 18th highest";
+        let qFour = "tariffs foreign foundation";
+        let qFive = "white African Southern";
+        
+        const input = document.getElementById("left");
+        const text = document.getElementById("text");
+        const text2 = document.getElementById("text2");
+        const text3 = document.getElementById("text3");
+        const text4 = document.getElementById("text4");
+        const text5 = document.getElementById("text5");
+        const text6 = document.getElementById("text6");
+        
+        document.getElementById("congratulations").style.display = "none";
+        
+        function questions()
+        {
+            if(pages == 1 && document.getElementById("input").value.trim().toLowerCase() === qOne.toLowerCase())
+            {
+                document.getElementById("congratulations").style.display = "block";
+                console.log(pages);
+            }
+            else if(pages == 2 && document.getElementById("input").value.trim().toLowerCase() === qTwo.toLowerCase())
+            {
+                document.getElementById("congratulations").style.display = "block";
+                console.log(pages);                    
+            }
+            else if(pages == 3 && document.getElementById("input").value.trim().toLowerCase() === qThree.toLowerCase())
+            {
+                document.getElementById("congratulations").style.display = "block";
+                console.log(pages);
+            }
+            else if(pages == 4 && document.getElementById("input").value.trim().toLowerCase() === qFour.toLowerCase())
+            {
+                document.getElementById("congratulations").style.display = "block";
+                console.log(pages);                    
+            }
+            else if(pages == 5 && document.getElementById("input").value.trim().toLowerCase() === qFive.toLowerCase())
+            {
+                document.getElementById("congratulations").style.display = "block";
+                console.log(pages);              
+            }
+        }
+        function nextText()
+        {
+            document.getElementById("congratulations").style.display = "none";
+                if(pages==1)
+                {              
+                    text.classList.remove("visible");
+                    text.classList.add("hidden");
+                    
+                    text2.classList.remove("hidden");
+                    text2.classList.add("visible");                    
+                    
+                    pages++;                    
+                    console.log(pages);
+                    
+                }
+                else if(pages==2)
+                {
+                    
+                    text3.classList.remove("hidden");
+                    text3.classList.add("visible");                    
+                    
+                    text2.classList.remove("visible");
+                    text2.classList.add("hidden");                   
+                    
+                    pages++;
+                    console.log(pages);
+                }
+                else if(pages==3)
+                {
+                    text4.classList.remove("hidden");
+                    text4.classList.add("visible");
+                    
+                    text3.classList.remove("visible");
+                    text3.classList.add("hidden");
+                    
+                    pages++;
+                    console.log(pages);
+                }
+                else if(pages==4)
+                {
+                     text5.classList.remove("hidden");
+                     text5.classList.add("visible");      
+                    
+                     text4.classList.remove("visible");
+                     text4.classList.add("hidden");                    
+                     pages++;
+                     console.log(pages);
+                }
+                else if(pages==5)
+                {
+                    text6.classList.remove("hidden");
+                    text6.classList.add("visible");      
+                    
+                    text5.classList.remove("visible");
+                    text5.classList.add("hidden")                    
+                    pages++;
+                    console.log(pages);
+                }
+        }
+        function backText()
+        {    
+            document.getElementById("congratulations").style.display = "none";
+                if(pages==2)
+                {
+                    text.classList.remove("hidden");
+                    text.classList.add("visible");
+                    
+                    text2.classList.remove("visible");
+                    text2.classList.add("hidden"); 
+                    
+                    pages--;                   
+                    console.log(pages);
+                    
+                }
+                else if(pages==3)
+                {
+                    text3.classList.remove("visible");
+                    text3.classList.add("hidden");                     
+                    
+                    text2.classList.remove("hidden");
+                    text2.classList.add("visible"); 
+                    
+                    pages--;
+                    console.log(pages);
+                }
+                else if(pages==4)
+                {
+                    text4.classList.remove("visible");
+                    text4.classList.add("hidden");                     
+                    
+                    text3.classList.remove("hidden");
+                    text3.classList.add("visible");
+                    
+                    pages--;
+                    console.log(pages);
+                }
+                else if(pages==5)
+                {
+                    text5.classList.remove("visible");
+                    text5.classList.add("hidden");                     
+                    
+                    text4.classList.remove("hidden");
+                    text4.classList.add("visible");    
+                    
+                    pages--;
+                    console.log(pages);
+                }
+                else if(pages==6)
+                {
+                    text6.classList.remove("visible");
+                    text6.classList.add("hidden");                     
+                    
+                    text5.classList.remove("hidden");
+                    text5.classList.add("visible");   
+                    
+                    pages--;
+                    console.log(pages);
+                }
+        }
+    </script>
+</html>
